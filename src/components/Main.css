@@ -1,3 +1,8 @@
+.root {
+    margin: 5px;
+    width: '25ch',
+}
+
 .search {
     display:flex;
     align-items:center;
