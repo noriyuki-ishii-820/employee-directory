@@ -1,36 +1,36 @@
-import React, {useEffect, useState} from 'react';
+import React, { Component } from 'react';
 import ResultList from "./ResultList"
 import TextField from '@material-ui/core/TextField';
 import "./Main.css"
+import API from "../utils/API"
 
-const API = "https://randomuser.me/api/?results=15"
+class Main extends Component {
+  state = {
+    results: []
+  };
 
-function Main() {
-  const [data, setData] = useState([]);
+  // When this component mounts, search the Giphy API for pictures of kittens
+  componentDidMount() {
+    API.search()
+      .then(res => this.setState({ results: res.data.results}))
+      .catch(err => console.log(err));
+  } 
 
-  useEffect(() =>{
-      const getPeople = async () => {
-        const response = await fetch(API);
-        const jsonData = await response.json();
-        setData(jsonData);
-    };
-    getPeople();
-  }, [])
-
-  return (
-        <div>
-            <div className="search">
-                <form className="root" noValidate autoComplete="off">
-                    <TextField className="textfield" id="outlined-basic" label="Search!" variant="outlined" />
-                </form>
-            </div>
-            <div>
-              <ResultList
-                results={data} 
-              />
-            </div>
-        </div>
-    )
+    render() {
+    return (
+      <div>
+          <div className="search">
+              <form className="root" noValidate autoComplete="off">
+                  <TextField className="textfield" id="outlined-basic" label="Search!" variant="outlined" />
+              </form>
+          </div>
+        
+            <ResultList results={this.state.results}
+            />
+     
+      </div>
+    );
+  }
 }
 
 export default Main
