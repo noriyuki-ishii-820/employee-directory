@@ -1,0 +1,19 @@
+.main {
+    background:#05054a;
+    color:white;
+    border-bottom:red 7px solid;
+    height:10em;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.text {
+    margin:auto;
+}
+
+h1, h4 {
+    margin:0;
+    color:white;
+}
