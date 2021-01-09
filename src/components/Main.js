@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ResultList from "./ResultList"
+import SearchForm from "./SearchForm"
 import TextField from '@material-ui/core/TextField';
 import "./Main.css"
 import API from "../utils/API"
 
 class Main extends Component {
   state = {
+    search:"",
     results: []
   };
 
@@ -16,17 +18,23 @@ class Main extends Component {
       .catch(err => console.log(err));
   } 
 
-    render() {
+  handleInputChange = event => {
+    console.log(event)
+
+    //console.log(filtered)
+  } 
+    
+
+
+  render() {
+ 
     return (
       <div>
           <div className="search">
-              <form className="root" noValidate autoComplete="off">
-                  <TextField className="textfield" id="outlined-basic" label="Search!" variant="outlined" />
-              </form>
+            <SearchForm handleInputChange={this.handleInputChange}/>
           </div>
         
-            <ResultList results={this.state.results}
-            />
+            <ResultList results={this.state.results}/>
      
       </div>
     );
