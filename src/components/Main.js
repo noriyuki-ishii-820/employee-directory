@@ -23,21 +23,36 @@ class Main extends Component {
     this.setState({search: event.target.value})
   } 
 
-  
+  Ascending = () => {
+    const asc = this.state.results.sort((a,b) => (a.name.first > b.name.first) ? 1 : -1)
+    this.setState({results: asc})
+
+  }
+
+  Descending = () => {
+    console.log("hi!")
+    const desc = this.state.results.sort((a,b) => (a.name.first > b.name.first) ? -1 : 1)
+    this.setState({results: desc})
+  }
+
+
   render() {
     const filteredList = this.state.results.filter((item) => {
       let values = item.name.first + item.name.last;
       values = values.toLowerCase();
       return values.indexOf(this.state.search) !== -1
     })
- 
+
+   
     return (
       <div>
           <div className="search">
             <SearchForm handleInputChange={this.handleInputChange}/>
           </div>
-           
-            <ResultList results={filteredList}/> 
+            <ResultList 
+              results={filteredList}
+              Ascending={this.Ascending}
+              Descending={this.Descending}/> 
       </div>
     );
   }

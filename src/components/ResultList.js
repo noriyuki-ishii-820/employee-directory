@@ -1,6 +1,8 @@
 import React from 'react'
 import "./ResultList.css"
 import Table from 'react-bootstrap/Table';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 function ResultList (props) {
 
@@ -10,7 +12,7 @@ function ResultList (props) {
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>First Name</th>
+                        <th>First Name <ArrowUpwardIcon onClick={props.Descending}/> <ArrowDownwardIcon onClick={props.Ascending}/></th>
                         <th>Last Name</th>
                         <th>Email Address</th>
                         <th>Date of Birth</th>
