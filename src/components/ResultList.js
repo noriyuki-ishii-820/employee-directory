@@ -12,8 +12,7 @@ function ResultList (props) {
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>First Name <ArrowUpwardIcon onClick={props.Descending}/> <ArrowDownwardIcon onClick={props.Ascending}/></th>
-                        <th>Last Name</th>
+                        <th>Name <ArrowUpwardIcon onClick={props.Descending}/> <ArrowDownwardIcon onClick={props.Ascending}/></th>
                         <th>Email Address</th>
                         <th>Date of Birth</th>
                     </tr>
@@ -22,8 +21,7 @@ function ResultList (props) {
                     {props.results.map((each, i) =>
                         <tr kry={i}>
                             <td><img src={each.picture.medium} alt="image" /></td>
-                            <td>{each.name.first}</td>
-                            <td>{each.name.last}</td>
+                            <td>{each.name.first} {each.name.last}</td>
                             <td>{each.email}</td>
                             <td>{each.dob.date}</td>
                         </tr>
