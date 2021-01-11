@@ -8,7 +8,7 @@ function ResultList (props) {
 
     return (
         <div>
-            <Table striped bordered hover>
+            <Table striped bordered hover className="root" >
                 <thead>
                     <tr>
                         <th>Image</th>
