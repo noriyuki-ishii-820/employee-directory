@@ -1,0 +1,8 @@
+.sns-icon {
+    margin: 0 5px;
+    color:white;
+}
+
+.sns-icon:hover {
+    color:black;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResultList from "./ResultList"
 import SearchForm from "./SearchForm"
+import Footer from "./Footer"
 import "./Main.css"
 import API from "../utils/API"
 
@@ -47,10 +48,13 @@ class Main extends Component {
           <div className="search">
             <SearchForm handleInputChange={this.handleInputChange}/>
           </div>
-            <ResultList 
-              results={filteredList}
-              Ascending={this.Ascending}
-              Descending={this.Descending}/> 
+          <ResultList 
+            results={filteredList}
+            Ascending={this.Ascending}
+            Descending={this.Descending}
+          />
+          <Footer /> 
+          
       </div>
     );
   }
