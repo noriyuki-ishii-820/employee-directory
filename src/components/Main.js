@@ -39,7 +39,7 @@ class Main extends Component {
     const filteredList = this.state.results.filter((item) => {
       let values = item.name.first + item.name.last;
       values = values.toLowerCase();
-      return values.indexOf(this.state.search) !== -1
+      return values.indexOf(this.state.search.toLowerCase()) !== -1
     })
 
    
