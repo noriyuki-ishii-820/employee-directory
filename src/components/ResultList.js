@@ -14,7 +14,7 @@ function ResultList (props) {
                         <th>Image</th>
                         <th>Name <ArrowUpwardIcon onClick={props.Descending}/> <ArrowDownwardIcon onClick={props.Ascending}/></th>
                         <th>Email Address</th>
-                        <th>Date of Birth</th>
+                        <th>Date of Birth(YYYY-MM-DD)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,7 +23,7 @@ function ResultList (props) {
                             <td><img src={each.picture.medium} alt="image" /></td>
                             <td>{each.name.first} {each.name.last}</td>
                             <td>{each.email}</td>
-                            <td>{each.dob.date}</td>
+                            <td>{each.dob.date.substring(0,10)}</td>
                         </tr>
                     )}
                 </tbody>

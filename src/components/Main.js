@@ -24,12 +24,12 @@ class Main extends Component {
   } 
 
   Ascending = () => {
-    const asc = this.state.results.sort((a,b) => ( a.name.first + a.name.last > b.name.first + a.name.last) ? 1 : -1)
+    const asc = this.state.results.sort((a,b) => ( a.name.first + a.name.last > b.name.first + b.name.last) ? 1 : -1)
     this.setState({results: asc})
   }
 
   Descending = () => {
-    const desc = this.state.results.sort((a,b) => (a.name.first + a.name.last > b.name.first + a.name.last) ? -1 : 1)
+    const desc = this.state.results.sort((a,b) => (a.name.first + a.name.last > b.name.first + b.name.last) ? -1 : 1)
     this.setState({results: desc})
   }
 
