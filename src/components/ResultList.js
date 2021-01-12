@@ -1,18 +1,18 @@
 import React from 'react'
-import "./ResultList.css"
 import Table from 'react-bootstrap/Table';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import "./ResultList.css"
 
 function ResultList (props) {
-
+    console.log(props)
     return (
         <div>
-            <Table striped bordered hover className="root" >
+            <Table striped  hover className="root" >
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>Name <ArrowUpwardIcon onClick={props.Descending}/> <ArrowDownwardIcon onClick={props.Ascending}/></th>
+                        <th className="column">Name <ArrowUpwardIcon className="icon" onClick={props.Descending}/> <ArrowDownwardIcon className="icon" onClick={props.Ascending}/></th>
                         <th>Email Address</th>
                         <th>Date of Birth(YYYY-MM-DD)</th>
                     </tr>
@@ -20,7 +20,7 @@ function ResultList (props) {
                 <tbody>
                     {props.results.map((each, i) =>
                         <tr kry={i}>
-                            <td><img src={each.picture.medium} alt="image" /></td>
+                            <td><img className="avatar" src={each.picture.large} alt="image" /></td>
                             <td>{each.name.first} {each.name.last}</td>
                             <td>{each.email}</td>
                             <td>{each.dob.date.substring(0,10)}</td>

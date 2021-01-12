@@ -1,4 +1,37 @@
-tr {
+Table {
+    border:none;
+}
+
+th {
+    background: #05054a;
+    color:white;
+    border-radius: 20px;
     height:50px;
+}
+
+.column {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+td {
+    padding: 10px;
+    height:30px;
+}
+
+
+
+.avatar {
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 3px 3px black;
+}
+
+.icon {
+    color: #05054a;
+    background:white;
+    border-radius:50%;
+    margin: 0 5px;
     
 }
