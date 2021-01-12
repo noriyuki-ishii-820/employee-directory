@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField';
-import "./Searchfield.css"
+import "./Searchform.css"
 
 function SearchForm(props) {
 
@@ -12,7 +12,7 @@ function SearchForm(props) {
                     onChange = {props.handleInputChange}
                     className="textfield" 
                     id="outlined-basic" 
-                    label="Search!" 
+                    label="Search by Name..." 
                     variant="outlined"
                     type="search"
                   />

@@ -14,6 +14,7 @@ function ResultList (props) {
                         <th>Image</th>
                         <th className="column">Name <ArrowUpwardIcon className="icon" onClick={props.Descending}/> <ArrowDownwardIcon className="icon" onClick={props.Ascending}/></th>
                         <th>Email Address</th>
+                        <th>Phone Number</th>
                         <th>Date of Birth(YYYY-MM-DD)</th>
                     </tr>
                 </thead>
@@ -23,6 +24,7 @@ function ResultList (props) {
                             <td><img className="avatar" src={each.picture.large} alt="image" /></td>
                             <td>{each.name.first} {each.name.last}</td>
                             <td>{each.email}</td>
+                            <td>{each.phone}</td>
                             <td>{each.dob.date.substring(0,10)}</td>
                         </tr>
                     )}
